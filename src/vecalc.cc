@@ -14,7 +14,7 @@
 
 typedef float Elem;
 
-typedef struct Vector{
+struct Vector{
 		unsigned int Size;
 		Elem *ptr;
 };
@@ -25,7 +25,7 @@ bool print_vec(Vector *vec)
 		return false;
 	else
 	{
-		for (int i = 0; i<vec->Size; i++)
+		for (unsigned int i = 0; i<vec->Size; i++)
 		{
 			printf("%1f ",vec->ptr[i]);
 		}
@@ -69,9 +69,9 @@ Vector *extend_vec(Vector *vec, Elem elem)
 	Vector *newVec = new Vector;
 	newVec->Size = vec->Size+1;
 	newVec->ptr = new Elem[newVec->Size];
-	if (vec->Size != NULL)
+	if (vec->Size != 0)
 	{
-		for (int i = 0; i<vec->Size; i++)
+		for (unsigned int i = 0; i<vec->Size; i++)
 		{
 			newVec->ptr[i] = vec->ptr[i];
 		}
@@ -89,7 +89,7 @@ Vector *extend_vec(Vector *vec, Elem elem)
  */
 Vector *scalar_plus(Vector *vec, Elem elem)
 {
-	for (int i = 0; i<vec->Size; i++)
+	for (unsigned int i = 0; i<vec->Size; i++)
 	{
 		vec->ptr[i] = vec->ptr[i]+elem;
 	}
