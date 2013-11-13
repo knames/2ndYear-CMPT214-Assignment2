@@ -3,4 +3,25 @@
 //11053598
 //CMPT 214 Assignment 2
 
-Fill the rest of this out.
+This is the reference manual for my vcalc.cc program. It is currently in a
+partial working state. It will compile without error without the TESTING flag.
+Including the TESTING flag while running it will cause the TESTING methods to
+run in the main function. Currently, the working tests are:
+	- alloc_vec
+	- extend_vec
+	- scalar_plus
+	- print_vec
+	- dealloc_vec
+
+The test functions assert that the Vector has not been set to NULL through
+a function failing to run, and then asserts that the Elem pointers are 
+expected values.
+
+Halfway through the testing function I deallocate newVec, to assert that
+the function is working, and then following that I recreate the recently 
+deallocated newVec to continue for the stub tests. Once the actual methods
+replace the stub ones, I can remove the recreation of newVec and move
+dealloc_vec to the end of the test bed.
+
+The program will halt when running the stub tests due to them not
+being fully implemented.
