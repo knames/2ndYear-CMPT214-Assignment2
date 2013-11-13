@@ -234,6 +234,9 @@ int main(int, char**)
 		assert(scalar_div(nullVec, 10) == NULL);
 		newVec = scalar_div(newVec, 0); //special div by 0 case
 		assert(newVec != NULL);
+
+
+
 	#endif
 
 	return 0;
